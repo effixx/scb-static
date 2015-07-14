@@ -1,0 +1,1 @@
+Simple static mockup for SCB project.

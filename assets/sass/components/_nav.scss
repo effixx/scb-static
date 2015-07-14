@@ -1,0 +1,396 @@
+// Nav
+
+// wp admin bar push
+.admin-bar {
+  @include min-screen($breakpoint-medium) {
+    .site-nav-wrap {
+      top: 32px;
+    }
+  }
+}
+
+.site-header {
+
+  .logo {
+    left: 35px;
+    margin: 0;
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    position: absolute;
+    background: url('../svgs/logo.svg') no-repeat;
+    background-size: cover;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .collection {
+    width: 34px;
+    height: 33px;
+    background: url('../svgs/collection.svg') no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 35px;
+    right: 20px;
+  }
+
+  @include min-screen($breakpoint-medium) {
+    z-index: 1;
+    width: 1199px;
+    top: 0;
+    left: 50%;
+    margin-left: -599px;
+    position: fixed;
+    height: 70px;
+    padding: 20px 0 0;
+    background: #fff;
+  }
+
+}
+
+.site-nav-wrap {
+  top: 30px;
+  right: 0;
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  position: absolute;
+  font-weight: bold;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: $gray;
+  .nav-toggle {
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    color: $gray;
+    &:hover {
+      color: $black;
+    }
+  }
+  &.-active {
+    .nav-inner {
+      opacity: 1;
+    }
+    .site-nav {
+      pointer-events: auto;
+      transform: translateY(0);
+      ul {
+        li {
+          opacity: 0;
+          @for $i from 1 through 7 {
+            &.nav-item-#{$i} {
+              animation: fadeInRight .2s .05s*$i forwards;
+            }
+          }
+        }
+      }
+    }
+    .nav-toggle {
+      .nav-label {
+        opacity: 0;
+      }
+    }
+  }
+  &.-inactive {
+    .nav-inner {
+      // animation: fadeOut .5s ease-out forwards;
+    }
+    .site-nav {
+      pointer-events: none;
+      ul {
+        li {
+          opacity: 1;
+          @for $i from 7 through 1 {
+            &.nav-item-#{$i} {
+              animation: fadeOutLeft .025s .025s*$i forwards;
+            }
+          }
+        }
+      }
+    }
+    .nav-toggle {
+      .nav-label {
+        opacity: 0;
+        animation: fadeIn .5s .8s forwards;
+      }
+    }
+  }
+
+  @include min-screen($breakpoint-medium) {
+    width: 85px;
+    padding: 0;
+    margin-right: 80px;
+    .nav-toggle {
+      .nav-label {
+        opacity: 1;
+        display: block;
+      }
+    }
+    .nav-inner {
+      pointer-events: none;
+    }
+    &.-inactive {
+      .nav-toggle {
+        .nav-label {
+          opacity: 1;
+          display: block;
+        }
+      }
+      .nav-inner {
+        pointer-events: none;
+      }
+    }
+    &.-active {
+      .nav-inner {
+        pointer-events: auto;
+      }
+    }
+  }
+
+  @include min-screen(1175px) {
+
+    &.-inactive {
+      width: 50%;
+      animation: navClose .5s cubic-bezier(.5,0,.5,1) .5s forwards;
+      .nav-inner {
+        animation: fadeOut 1s ease-out forwards;
+      }
+      .site-nav {
+        ul {
+          li {
+            opacity: 1;
+            @for $i from 1 through 7 {
+              &.nav-item-#{$i} {
+                animation: fadeOutRight .25s .15s*$i forwards;
+              }
+            }
+            a {
+              pointer-events: none;
+            }
+          }
+        }
+      }
+    }
+    &.-active {
+      animation: navOpen .5s cubic-bezier(.5,0,0,1) forwards;
+
+      .nav-inner {
+        animation: fadeIn .5s .25s forwards;
+      }
+
+      .nav-toggle {
+        width: 25px;
+      }
+
+      .site-nav {
+        ul {
+          li {
+            @for $i from 1 through 7 {
+              &.nav-item-#{$i} {
+                animation: fadeInLeft .25s .15s*$i alternate both;
+              }
+            }
+            a {
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-inner {
+  @include clearfix();
+
+  @include min-screen($breakpoint-medium) {
+    opacity: 0;
+    background: none;
+    transition: opacity .25s ease-out;
+  }
+
+  @include min-screen(1175px) {
+    transition: opacity 1s .5s ease-out;
+  }
+}
+
+.site-nav {
+  width: 100%;
+  padding-top: 50px;
+  position: absolute;
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition: transform .5s cubic-bezier(.5,0,.5,1);
+  ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: $white;
+    @include clearfix();
+    li {
+      margin: 0;
+      height: 50px;
+      list-style: none;
+      line-height: 50px;
+      border-bottom: 1px solid $gray;
+      transition: opacity .25s ease-out;
+      &.active {
+        a {
+        }
+      }
+      a {
+        height: 100%;
+        display: block;
+        padding: 0 20px;
+        text-decoration: none;
+        transition: color .2s ease-out, background .2s ease-out;
+        &:hover, &:focus {
+          color: $black;
+        }
+      }
+    }
+  }
+
+  @include min-screen($breakpoint-medium) {
+    left: 0;
+  }
+
+  @include min-screen(1175px) {
+    right: 30px;
+    left: auto;
+    padding: 0;
+    width: auto;
+    background: none;
+    transform: translateY(0);
+    ul {
+      background: none;
+      li {
+        float: left;
+        margin: 0 20px;
+        border-bottom: none;
+        a {
+          padding: 0;
+          height: auto;
+          &:hover, &:focus {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.search-form {
+  display: none;
+}
+
+.nav-toggle {
+  width: 100%;
+  float: right;
+  height: 50px;
+  border: none;
+  display: block;
+  background: none;
+  appearence: none;
+  line-height: 10px;
+  position: relative;
+  @include clearfix();
+  padding: 20px 50px;
+  -webkit-appearence: none;
+  &:focus, &:active {
+    outline: none;
+  }
+  &:hover {
+    .nav-icon-lines {
+      &::before {
+        transform: translateY(-2px);
+      }
+      &::after {
+        transform: translateY(2px);
+      }
+    }
+    &.-active {
+      .nav-icon-lines {
+        &::before, &::after {
+          transform: none;
+        }
+      }
+    }
+  }
+  .nav-label {
+    opacity: 1;
+    float: left;
+    display: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: opacity .25s ease-out;
+  }
+  .nav-icon {
+    top: 18px;
+    width: 20px;
+    height: 14px;
+    padding: 6px 0;
+    display: block;
+    right: 50px;
+    position: absolute;
+    .nav-icon-lines {
+      opacity: 1;
+      width: 20px;
+      height: 2px;
+      display: block;
+      background: $gray;
+      transition: opacity .1s ease-out;
+      &::before, &::after {
+        left: 0;
+        width: 20px;
+        content: '';
+        height: 2px;
+        position: absolute;
+        background: $gray;
+        transition: transform .1s ease-out, left .1s ease-out;
+      }
+      &::before {
+        top: 0;
+        transform-origin: top left;
+      }
+      &::after {
+        bottom: 0;
+        transform-origin: bottom left;
+      }
+    }
+  }
+
+
+  // Open state
+  &.-active {
+    .nav-icon {
+      .nav-icon-lines {
+        background: rgba(0,0,0,0);
+        &::before, &::after {
+          left: 0;
+          width: 18px;
+        }
+        &::before {
+          transform: rotate(45deg);
+        }
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  @include min-screen(1175px) {
+    padding: 20px 0;
+    .nav-label {
+      display: block;
+    }
+    .nav-icon {
+      right: 0;
+    }
+  }
+}

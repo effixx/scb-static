@@ -1,0 +1,32 @@
+// Typography
+@font-face {
+    font-family: 'apercu';
+    src: url('../fonts/apercu-medium-webfont.eot');
+    src: url('../fonts/apercu-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/apercu-medium-webfont.woff2') format('woff2'),
+         url('../fonts/apercu-medium-webfont.woff') format('woff'),
+         url('../fonts/apercu-medium-webfont.ttf') format('truetype'),
+         url('../fonts/apercu-medium-webfont.svg#apercumedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'apercu';
+    src: url('../fonts/apercu-webfont.eot');
+    src: url('../fonts/apercu-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/apercu-webfont.woff2') format('woff2'),
+         url('../fonts/apercu-webfont.woff') format('woff'),
+         url('../fonts/apercu-webfont.ttf') format('truetype'),
+         url('../fonts/apercu-webfont.svg#apercuregular') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+// Fonts
+$font-sans: 'apercu', Helvetica, sans-serif;
+$font-serif: Georgia, serif;
+
+// Hide fonts while loading from Typekit
+.wf-loading {
+  visibility: hidden;
+}

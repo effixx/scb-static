@@ -1,0 +1,156 @@
+// Base styles
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  color: $black;
+  font-size: 16px; //Em base unit
+  font-size: 100%;
+  background: $gray-lite;
+  overflow-x: hidden;
+  font-family: $font-sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+h1 {
+  font-size: 98px;
+  line-height: .816326531em;
+}
+h2 {
+  font-size: 28px;
+  line-height: 1.071428571em;
+  &.decorated {
+    padding-bottom: 16px;
+    .icon-squiggle {
+      left: 0;
+      bottom: 0;
+      width: 36px;
+      height: 6px;
+      stroke: inherit;
+      stroke-width: 2px;
+      position: absolute;
+    }
+  }
+}
+
+p {
+  em {
+    font-style: italic;
+  }
+  a {
+    position: relative;
+    text-decoration: none;
+    &::after {
+      left: 0;
+      bottom: 0;
+      opacity: 0;
+      height: 1px;
+      content: '';
+      width: 100%;
+      color: inherit;
+      position: absolute;
+      transform: scaleX(0);
+      transform-origin: left;
+      border-bottom: 1px solid;
+      transition: opacity .2s ease-out, transform .2s ease-out;
+    }
+    &:hover, &:focus, &:active {
+      &::after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+a {
+	color: inherit;
+}
+
+img {
+	max-width: 100%;
+  height: auto;
+}
+.no-spacing {
+  letter-spacing: -.05em;
+}
+
+.bg-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  position: fixed;
+  background: rgba(0,0,0,.5);
+}
+
+// Browser alert
+.alert-warning {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  color: $black;
+  padding: 50px;
+  text-align: center;
+  background: $brand-primary;
+}
+.alert {
+  padding: 50px;
+  background: #fff;
+}
+
+// Disable scrolling when modals are active
+.no-scroll {
+  overflow: hidden;
+}
+
+// Utility classes
+.visually-hidden {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  display: inline-block;
+}
+.hide {
+  display: none;
+}
+.caps {
+  text-transform: uppercase;
+}
+.hanging-quote {
+  margin-left: -.4em;
+  display: inline-block;
+}
+
+.wrap {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  @include clearfix();
+}
+
+.content {
+  z-index: 1;
+  width: 100%;
+  position: relative;
+}
+
+.site-main {
+  background: $white;
+  width: 1200px;
+  margin: 0 auto;
+}

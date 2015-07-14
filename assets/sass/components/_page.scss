@@ -1,0 +1,31 @@
+// Generic Page
+
+.page, .blog {
+  
+  section {
+  }
+
+}
+
+// Interior pages
+.interior.page, .blog {
+  .main {
+  }
+
+  header {
+    @include min-screen($breakpoint-medium) {
+      .headerContent {
+        padding-top: 120px;
+      }
+    }
+  }
+  .page-description {
+    @include min-screen($breakpoint-medium) {
+    }
+  }
+
+  section {
+    @include min-screen($breakpoint-huge) {
+    }
+  }
+}

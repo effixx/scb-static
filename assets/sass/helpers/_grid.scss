@@ -1,0 +1,70 @@
+// Grid
+
+$margin: 1em;
+$padding: 1em;
+
+.grid {
+  width: 100%;
+  display: block;
+  &.-verticle {
+    display: flex;
+    flex-direction: column;
+  }
+  @include min-screen($breakpoint-medium) {
+    display: flex;
+    padding-right: 4.166666667%;
+    &.-verticle {
+      flex-direction: row;
+    }
+  }
+  &.-persist {
+    display: flex;
+  }
+}
+
+.one-half-right, .two-thirds-right, .one-third-right, .one-third-middle, .one-fourth-right  {margin-top: $margin;}
+
+
+.grid.-persist {
+  .flex-item {
+    flex-basis: auto;
+  }
+  .one-fourth {
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .one-third {
+    flex-basis: 30.4347826%; // Adjusted for 1/23 grid
+    max-width: 30.4347826%; // Adjusted for 1/23 grid
+  }
+  .one-half {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+  .two-thirds {
+    flex-basis: 69.565217391%; // Adjusted for 1/23 grid
+    max-width: 69.565217391%; // Adjusted for 1/23 grid
+  }
+}
+
+@include min-screen($breakpoint-medium) {
+  .flex-item {
+    flex-basis: auto;
+  }
+  .one-fourth {
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .one-third {
+    flex-basis: 30.4347826%; // Adjusted for 1/23 grid
+    max-width: 30.4347826%; // Adjusted for 1/23 grid
+  }
+  .one-half {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+  .two-thirds {
+    flex-basis: 69.565217391%; // Adjusted for 1/23 grid
+    max-width: 69.565217391%; // Adjusted for 1/23 grid
+  }
+}

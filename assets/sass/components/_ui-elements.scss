@@ -1,0 +1,70 @@
+// Ui Elements
+
+.btn {
+  height: 35px;
+  color: $white;
+  padding: 0 20px;
+  font-size: 14px;
+  line-height: 35px;
+  background: $turquoise;
+  text-transform: uppercase;
+  border: 1px solid $turquoise;
+  transition: background .2s ease-out, color .2s ease-out;
+  &:hover, &:focus {
+    color: $turquoise;
+    background: $white;
+  }
+}
+
+// Close X
+.close-x {
+  width: 18px;
+  padding: 4px;
+  height: 18px;
+  border: none;
+  background: none;
+  position: relative;
+  display: inline-block;
+  &:focus, &:active {
+    outline: none;
+  }
+  &::before, &::after {
+    top: 50%;
+    content: '';
+    width: 13px;
+    height: 1px;
+    background: $black;
+    position: absolute;
+  }
+  &::before {
+    left: 2px;
+    transform: rotate(45deg) translateY(-50%);
+  }
+  &::after {
+    right: 2px;
+    transform: rotate(-45deg) translateY(-50%);
+  }
+}
+
+// Accrordions
+.accordion {
+  .accordion-item {
+    list-style: none;
+    &::before {
+      display: none;
+    }
+    &.active {
+      .accordion-content {
+        max-height: 500px;
+      }
+    }
+  }
+  .accordion-trigger {
+    cursor: pointer;
+  }
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s ease-in-out;
+  }
+}
