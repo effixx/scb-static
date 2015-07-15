@@ -1,0 +1,61 @@
+$vert: 32px;
+.dropdown {
+  position: absolute;
+  top: 36px;
+  left: 92px;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    transition: all .5s;
+    &:hover ul {
+      opacity: 1;
+      top: $vert;
+      visibility: visible;
+    }
+    ul {
+      top: 20px;
+      left: 0;
+      width: 220px;
+      opacity: 0;
+      position: absolute;
+      visibility: hidden;
+      transition: all .5s ease-out;
+      li {
+        float: none;
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+    background: $white;
+    font: 20px/#{$vert} $font-sans;
+    letter-spacing: .02em;
+    background: $white;
+    color: $gray;
+    display: block;
+    padding: 0 15px;
+    &:hover {
+      color: $gray-hover;
+    }
+  }
+  // top li
+  >ul>li {
+    &:after {
+      display: block;
+      content: url('../svgs/arrow-down.svg');
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      right: -10px;
+      top: 9px;
+    }
+  }
+}

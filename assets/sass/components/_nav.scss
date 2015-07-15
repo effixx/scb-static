@@ -11,7 +11,17 @@
 
 .site-header {
 
+  #tagline {
+    font: 20px/32px $font-sans;
+    letter-spacing: .02em;
+    color: $white;
+    position: absolute;
+    top: 70px;
+    left: 108px;
+  }
+
   .logo {
+    z-index: 10;
     left: 35px;
     margin: 0;
     width: 65px;
@@ -68,7 +78,7 @@
     letter-spacing: .2em;
     color: $gray;
     &:hover {
-      color: $black;
+      color: $gray-hover;
     }
   }
   &.-active {
@@ -249,7 +259,7 @@
         text-decoration: none;
         transition: color .2s ease-out, background .2s ease-out;
         &:hover, &:focus {
-          color: $black;
+          color: $gray-hover;
         }
       }
     }

@@ -1,7 +1,7 @@
 // SCB static - Firebelly 2015
 
 // good design for good reason for good namespace
-var fb = (function($) {
+var SCB = (function($) {
 
   var screen_width = 0,
       breakpoint_small = false,
@@ -121,10 +121,19 @@ var fb = (function($) {
     breakpoint_huge = (screenWidth > 3000);
   }
 
+  function _scroll() {
+    var scrolltop = $(window).scrollTop();
+
+    // fade & slide up tagline
+    $('#tagline').css('opacity', 1/(scrolltop/25));
+    $('#tagline').css('transform','translateY(-'+(scrolltop/3)+'px)');
+  }
+
   // public functions
   return {
     init: _init,
     resize: _resize,
+    scroll: _scroll,
     scrollBody: function(section, duration, delay) {
       _scrollBody(section, duration, delay);
     }
@@ -133,6 +142,7 @@ var fb = (function($) {
 })(jQuery);
 
 // fire up the mothership
-jQuery(document).ready(fb.init);
+jQuery(document).ready(SCB.init);
 // zig-zag the mothership
-jQuery(window).resize(fb.resize);
+jQuery(window).resize(SCB.resize);
+jQuery(window).on('DOMMouseScroll mousewheel scroll', SCB.scroll);
