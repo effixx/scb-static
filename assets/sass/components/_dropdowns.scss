@@ -73,6 +73,11 @@ $item: 1 / $item-count;
       opacity: 1;
       top: $vert;
       visibility: visible;
+      li {
+        a {
+          opacity: 1;
+        }
+      }
     }
     ul {
       top: 20px;
@@ -81,9 +86,13 @@ $item: 1 / $item-count;
       opacity: 0;
       position: absolute;
       visibility: hidden;
-      transition: all .5s ease-out;
+      transition: top .5s ease-out;
       li {
         float: none;
+        a {
+          opacity: 0;
+          transition: opacity .5s ease-out;
+        }
       }
     }
   }
@@ -103,7 +112,6 @@ $item: 1 / $item-count;
   // top li
   >ul>li {
     &:after {
-      opacity: 0;
       display: block;
       content: url('../svgs/arrow-down.svg');
       width: 15px;
@@ -112,7 +120,74 @@ $item: 1 / $item-count;
       right: 0px;
       top: 7px;
       pointer-events: none;
-      animation: fadeInTopBounce .5s cubic-bezier(1,.5,.5,1) 1.6s forwards;
     }
+  }
+}
+
+// A variations
+.a {
+  .dropdown {
+    >ul>li {
+      &:after {
+        opacity: 0;
+        animation: fadeInTopBounce .5s cubic-bezier(1,.5,.5,1) 1.6s forwards;
+      }
+    }
+  }
+}
+
+
+@keyframes slideUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  25% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-400%);
+  }
+}
+
+.b {
+  &.loading {
+    .dropdown {
+      li {
+        ul {
+          top: auto; 
+          opacity: 1;
+          visibility: visible;
+          li {
+            a {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      .filter-list {
+        > li {
+          z-index: 1;
+          position: relative;
+          ul {
+            overflow: hidden;
+            li {
+              position: relative;
+              @for $i from 1 through 4 {
+                &.item-#{$i} {
+                  z-index: $i;
+                  animation: slideUp 1s (1s + .1s*$i);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .dropdown {
+
   }
 }

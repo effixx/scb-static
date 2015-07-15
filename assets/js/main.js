@@ -26,6 +26,7 @@ var SCB = (function($) {
       // init behavior for various sections
       // _initSearch();
       _initNav();
+      _bIntro();
 
       // Esc handlers
       $(document).keyup(function(e) {
@@ -46,6 +47,12 @@ var SCB = (function($) {
       delay: delay,
       offset: -wpOffset
     }, "easeOutSine");
+  }
+
+  function _bIntro() {
+    setTimeout(function() {
+      $('.b.loading').removeClass('loading');
+    }, 1500);
   }
 
   function _initSearch() {

@@ -159,15 +159,29 @@ img {
 
 // Site intro stuff
 
-
-
-.site-nav-wrap, .collection {
-  opacity: 0;
-  animation: fadeIn 1.5s 1.2s forwards;
-}
-.site-main {
-  .wrap {
+// Option A
+.a {
+  .site-nav-wrap, .collection {
     opacity: 0;
     animation: fadeIn 1.5s 1.2s forwards;
+  }
+  .site-main {
+    .wrap {
+      opacity: 0;
+      animation: fadeIn 1.5s 1.2s forwards;
+    }
+  }
+}
+
+.b {
+  .site-nav-wrap, .collection {
+    opacity: 0;
+    animation: fadeIn 1.5s .2s forwards;
+  }
+  .site-main {
+    .wrap {
+      opacity: 0;
+      animation: fadeIn 1.5s .2s forwards;
+    }
   }
 }
