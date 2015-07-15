@@ -1,4 +1,58 @@
 $vert: 32px;
+
+// Animated scroller
+
+$item-count: 6;
+$item: 1 / $item-count;
+
+@keyframes scrollUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY((-100% / $item-count) * ($item-count - 1));
+  }
+}
+
+.scroller {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 32px;
+  width: 220px;
+  overflow: hidden;
+  background: $white;
+  position: absolute;
+  pointer-events: none;
+  animation: fadeOut .1s step-end 1.5s forwards;
+  &::before {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    content: '';
+    height: 10px;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(255,255,255,1), rgba(255,255,255,0));
+  }
+  &::after {
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    content: '';
+    height: 10px;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,1));
+  }
+  ul {
+    animation: scrollUp 1.5s .16s 1 forwards;
+    li {
+      float: none;
+    }
+  }
+}
+
 .dropdown {
   position: absolute;
   top: 36px;
@@ -41,7 +95,7 @@ $vert: 32px;
     background: $white;
     color: $gray;
     display: block;
-    padding: 0 15px;
+    padding: 0 25px 0 15px;
     &:hover {
       color: $gray-hover;
     }
@@ -49,13 +103,16 @@ $vert: 32px;
   // top li
   >ul>li {
     &:after {
+      opacity: 0;
       display: block;
       content: url('../svgs/arrow-down.svg');
       width: 15px;
       height: 15px;
       position: absolute;
-      right: -10px;
-      top: 9px;
+      right: 0px;
+      top: 7px;
+      pointer-events: none;
+      animation: fadeInTopBounce .5s cubic-bezier(1,.5,.5,1) 1.6s forwards;
     }
   }
 }
