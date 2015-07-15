@@ -91,8 +91,34 @@ $item: 1 / $item-count;
         float: none;
         a {
           opacity: 0;
-          transition: opacity .5s ease-out;
+          transition: opacity .5s ease-out, color .2s ease-out;
         }
+      }
+    }
+
+    &.design:hover {
+      > a {
+        color: $dark;
+      }
+    }
+    &.architecture:hover {
+      a {
+        color: $green;
+      }
+    }
+    &.planning:hover {
+      a {
+        color: $blue;
+      }
+    }
+    &.interior-design:hover {
+      a {
+        color: $yellow;
+      }
+    }
+    &.visualization:hover {
+      a {
+        color: $orange;
       }
     }
   }
@@ -105,9 +131,6 @@ $item: 1 / $item-count;
     color: $gray;
     display: block;
     padding: 0 25px 0 15px;
-    &:hover {
-      color: $gray-hover;
-    }
   }
   // top li
   >ul>li {
@@ -153,6 +176,14 @@ $item: 1 / $item-count;
 }
 
 .b {
+  .dropdown {
+    >ul>li {
+      &:after {
+        opacity: 0;
+        animation: fadeInTopBounce .5s cubic-bezier(1,.5,.5,1) 2s forwards;
+      }
+    }
+  }
   &.loading {
     .dropdown {
       li {
@@ -178,7 +209,7 @@ $item: 1 / $item-count;
               @for $i from 1 through 4 {
                 &.item-#{$i} {
                   z-index: $i;
-                  animation: slideUp 1s (1s + .1s*$i);
+                  animation: slideUp 1s (1.5s + .1s*$i);
                 }
               }
             }

@@ -51,8 +51,8 @@ var SCB = (function($) {
 
   function _bIntro() {
     setTimeout(function() {
-      $('.b.loading').removeClass('loading');
-    }, 1500);
+      $('.loading').removeClass('loading');
+    }, 2000);
   }
 
   function _initSearch() {

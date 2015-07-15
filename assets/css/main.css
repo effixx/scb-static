@@ -959,7 +959,7 @@ img {
   margin: 0 auto;
 }
 
-.a .site-nav-wrap, .a .collection {
+.a.loading .site-nav-wrap, .a.loading .collection {
   opacity: 0;
   -webkit-animation: fadeIn 1.5s 1.2s forwards;
           animation: fadeIn 1.5s 1.2s forwards;
@@ -970,7 +970,7 @@ img {
           animation: fadeIn 1.5s 1.2s forwards;
 }
 
-.b .site-nav-wrap, .b .collection {
+.b.loading .site-nav-wrap, .b.loading .collection {
   opacity: 0;
   -webkit-animation: fadeIn 1.5s .2s forwards;
           animation: fadeIn 1.5s .2s forwards;
@@ -1642,7 +1642,22 @@ img {
 }
 .dropdown li ul li a {
   opacity: 0;
-  transition: opacity .5s ease-out;
+  transition: opacity .5s ease-out, color .2s ease-out;
+}
+.dropdown li.design:hover > a {
+  color: #211B1D;
+}
+.dropdown li.architecture:hover a {
+  color: #52BFAC;
+}
+.dropdown li.planning:hover a {
+  color: #B7CFD3;
+}
+.dropdown li.interior-design:hover a {
+  color: #EFD88E;
+}
+.dropdown li.visualization:hover a {
+  color: #F4AA79;
 }
 .dropdown a {
   text-decoration: none;
@@ -1653,9 +1668,6 @@ img {
   color: #989192;
   display: block;
   padding: 0 25px 0 15px;
-}
-.dropdown a:hover {
-  color: #50c0ac;
 }
 .dropdown > ul > li:after {
   display: block;
@@ -1709,6 +1721,11 @@ img {
             transform: translateY(-400%);
   }
 }
+.b .dropdown > ul > li:after {
+  opacity: 0;
+  -webkit-animation: fadeInTopBounce 0.5s cubic-bezier(1, 0.5, 0.5, 1) 2s forwards;
+          animation: fadeInTopBounce 0.5s cubic-bezier(1, 0.5, 0.5, 1) 2s forwards;
+}
 .b.loading .dropdown li ul {
   top: auto;
   opacity: 1;
@@ -1729,23 +1746,23 @@ img {
 }
 .b.loading .dropdown .filter-list > li ul li.item-1 {
   z-index: 1;
-  -webkit-animation: slideUp 1s 1.1s;
-          animation: slideUp 1s 1.1s;
+  -webkit-animation: slideUp 1s 1.6s;
+          animation: slideUp 1s 1.6s;
 }
 .b.loading .dropdown .filter-list > li ul li.item-2 {
   z-index: 2;
-  -webkit-animation: slideUp 1s 1.2s;
-          animation: slideUp 1s 1.2s;
+  -webkit-animation: slideUp 1s 1.7s;
+          animation: slideUp 1s 1.7s;
 }
 .b.loading .dropdown .filter-list > li ul li.item-3 {
   z-index: 3;
-  -webkit-animation: slideUp 1s 1.3s;
-          animation: slideUp 1s 1.3s;
+  -webkit-animation: slideUp 1s 1.8s;
+          animation: slideUp 1s 1.8s;
 }
 .b.loading .dropdown .filter-list > li ul li.item-4 {
   z-index: 4;
-  -webkit-animation: slideUp 1s 1.4s;
-          animation: slideUp 1s 1.4s;
+  -webkit-animation: slideUp 1s 1.9s;
+          animation: slideUp 1s 1.9s;
 }
 
 @media screen and (min-width: 768px) {
