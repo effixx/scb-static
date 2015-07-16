@@ -794,7 +794,7 @@ html {
 }
 
 body {
-  color: #333333;
+  color: #211A1E;
   font-size: 16px;
   font-size: 100%;
   background: #dedede;
@@ -893,10 +893,10 @@ img {
   left: 0;
   right: 0;
   z-index: 200;
-  color: #333333;
+  color: #211A1E;
   padding: 50px;
   text-align: center;
-  background: #333333;
+  background: #211A1E;
 }
 
 .alert {
@@ -972,13 +972,13 @@ img {
 
 .b.loading .site-nav-wrap, .b.loading .collection {
   opacity: 0;
-  -webkit-animation: fadeIn 1.5s .2s forwards;
-          animation: fadeIn 1.5s .2s forwards;
+  -webkit-animation: fadeIn 2s 1s forwards;
+          animation: fadeIn 2s 1s forwards;
 }
 .b .site-main .wrap {
   opacity: 0;
-  -webkit-animation: fadeIn 1.5s .2s forwards;
-          animation: fadeIn 1.5s .2s forwards;
+  -webkit-animation: fadeIn 2s 1s forwards;
+          animation: fadeIn 2s 1s forwards;
 }
 
 .btn {
@@ -1014,7 +1014,7 @@ img {
   content: '';
   width: 13px;
   height: 1px;
-  background: #333333;
+  background: #211A1E;
   position: absolute;
 }
 .close-x::before {
@@ -1120,7 +1120,7 @@ img {
   color: #989192;
 }
 .site-nav-wrap .nav-toggle:hover {
-  color: #50c0ac;
+  color: #211A1E;
 }
 .site-nav-wrap.-active .nav-inner {
   opacity: 1;
@@ -1273,8 +1273,8 @@ img {
     pointer-events: none;
   }
   .site-nav-wrap.-active {
-    -webkit-animation: navOpen 0.5s cubic-bezier(0.5, 0, 0, 1) forwards;
-            animation: navOpen 0.5s cubic-bezier(0.5, 0, 0, 1) forwards;
+    -webkit-animation: navOpen 0.4s cubic-bezier(0.5, 0, 0, 1) forwards;
+            animation: navOpen 0.4s cubic-bezier(0.5, 0, 0, 1) forwards;
   }
   .site-nav-wrap.-active .nav-inner {
     -webkit-animation: fadeIn .5s .25s forwards;
@@ -1384,7 +1384,7 @@ img {
   transition: color .2s ease-out, background .2s ease-out;
 }
 .site-nav ul li a:hover, .site-nav ul li a:focus {
-  color: #50c0ac;
+  color: #211A1E;
 }
 @media screen and (min-width: 768px) {
   .site-nav {
@@ -1470,7 +1470,6 @@ img {
   display: none;
   font-size: 14px;
   text-transform: uppercase;
-  transition: opacity .25s ease-out;
 }
 .nav-toggle .nav-icon {
   top: 18px;
@@ -1613,6 +1612,9 @@ img {
   padding: 0;
   width: 100%;
 }
+.dropdown a {
+  transition: opacity .5s ease-out, color .2s ease-out;
+}
 .dropdown li {
   float: left;
   margin: 0;
@@ -1642,7 +1644,6 @@ img {
 }
 .dropdown li ul li a {
   opacity: 0;
-  transition: opacity .5s ease-out, color .2s ease-out;
 }
 .dropdown li.design:hover > a {
   color: #211B1D;
@@ -1682,8 +1683,8 @@ img {
 
 .a .dropdown > ul > li:after {
   opacity: 0;
-  -webkit-animation: fadeInTopBounce 0.5s cubic-bezier(1, 0.5, 0.5, 1) 1.6s forwards;
-          animation: fadeInTopBounce 0.5s cubic-bezier(1, 0.5, 0.5, 1) 1.6s forwards;
+  -webkit-animation: fadeInTopBounce 0.45s cubic-bezier(1, 0.5, 0.5, 1) 1.6s forwards;
+          animation: fadeInTopBounce 0.45s cubic-bezier(1, 0.5, 0.5, 1) 1.6s forwards;
 }
 
 @-webkit-keyframes slideUp {
@@ -1723,8 +1724,8 @@ img {
 }
 .b .dropdown > ul > li:after {
   opacity: 0;
-  -webkit-animation: fadeInTopBounce 0.5s cubic-bezier(1, 0.5, 0.5, 1) 2s forwards;
-          animation: fadeInTopBounce 0.5s cubic-bezier(1, 0.5, 0.5, 1) 2s forwards;
+  -webkit-animation: fadeInTopBounce 0.45s cubic-bezier(1, 0.5, 0.5, 1) 2s forwards;
+          animation: fadeInTopBounce 0.45s cubic-bezier(1, 0.5, 0.5, 1) 2s forwards;
 }
 .b.loading .dropdown li ul {
   top: auto;
@@ -1746,23 +1747,23 @@ img {
 }
 .b.loading .dropdown .filter-list > li ul li.item-1 {
   z-index: 1;
-  -webkit-animation: slideUp 1s 1.6s;
-          animation: slideUp 1s 1.6s;
+  -webkit-animation: slideUp 0.8s 1.6s;
+          animation: slideUp 0.8s 1.6s;
 }
 .b.loading .dropdown .filter-list > li ul li.item-2 {
   z-index: 2;
-  -webkit-animation: slideUp 1s 1.7s;
-          animation: slideUp 1s 1.7s;
+  -webkit-animation: slideUp 0.8s 1.7s;
+          animation: slideUp 0.8s 1.7s;
 }
 .b.loading .dropdown .filter-list > li ul li.item-3 {
   z-index: 3;
-  -webkit-animation: slideUp 1s 1.8s;
-          animation: slideUp 1s 1.8s;
+  -webkit-animation: slideUp 0.8s 1.8s;
+          animation: slideUp 0.8s 1.8s;
 }
 .b.loading .dropdown .filter-list > li ul li.item-4 {
   z-index: 4;
-  -webkit-animation: slideUp 1s 1.9s;
-          animation: slideUp 1s 1.9s;
+  -webkit-animation: slideUp 0.8s 1.9s;
+          animation: slideUp 0.8s 1.9s;
 }
 
 @media screen and (min-width: 768px) {

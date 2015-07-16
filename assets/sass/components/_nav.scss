@@ -78,7 +78,7 @@
     letter-spacing: .2em;
     color: $gray;
     &:hover {
-      color: $gray-hover;
+      color: $black;
     }
   }
   &.-active {
@@ -186,7 +186,7 @@
       }
     }
     &.-active {
-      animation: navOpen .5s cubic-bezier(.5,0,0,1) forwards;
+      animation: navOpen .4s cubic-bezier(.5,0,0,1) forwards;
 
       .nav-inner {
         animation: fadeIn .5s .25s forwards;
@@ -259,7 +259,7 @@
         text-decoration: none;
         transition: color .2s ease-out, background .2s ease-out;
         &:hover, &:focus {
-          color: $gray-hover;
+          color: $black;
         }
       }
     }
@@ -337,7 +337,7 @@
     display: none;
     font-size: 14px;
     text-transform: uppercase;
-    transition: opacity .25s ease-out;
+    // transition: opacity .25s ease-out;
   }
   .nav-icon {
     top: 18px;

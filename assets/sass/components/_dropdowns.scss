@@ -63,6 +63,9 @@ $item: 1 / $item-count;
     padding: 0;
     width: 100%;
   }
+  a {
+    transition: opacity .5s ease-out, color .2s ease-out;
+  }
   li {
     float: left;
     margin: 0;
@@ -91,7 +94,6 @@ $item: 1 / $item-count;
         float: none;
         a {
           opacity: 0;
-          transition: opacity .5s ease-out, color .2s ease-out;
         }
       }
     }
@@ -153,7 +155,7 @@ $item: 1 / $item-count;
     >ul>li {
       &:after {
         opacity: 0;
-        animation: fadeInTopBounce .5s cubic-bezier(1,.5,.5,1) 1.6s forwards;
+        animation: fadeInTopBounce .45s cubic-bezier(1,.5,.5,1) 1.6s forwards;
       }
     }
   }
@@ -180,7 +182,7 @@ $item: 1 / $item-count;
     >ul>li {
       &:after {
         opacity: 0;
-        animation: fadeInTopBounce .5s cubic-bezier(1,.5,.5,1) 2s forwards;
+        animation: fadeInTopBounce .45s cubic-bezier(1,.5,.5,1) 2s forwards;
       }
     }
   }
@@ -209,7 +211,7 @@ $item: 1 / $item-count;
               @for $i from 1 through 4 {
                 &.item-#{$i} {
                   z-index: $i;
-                  animation: slideUp 1s (1.5s + .1s*$i);
+                  animation: slideUp .8s (1.5s + .1s*$i);
                 }
               }
             }

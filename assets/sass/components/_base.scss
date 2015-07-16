@@ -179,13 +179,13 @@ img {
   &.loading {
     .site-nav-wrap, .collection {
       opacity: 0;
-      animation: fadeIn 1.5s .2s forwards;
+      animation: fadeIn 2s 1s forwards;
     }
   }
   .site-main {
     .wrap {
       opacity: 0;
-      animation: fadeIn 1.5s .2s forwards;
+      animation: fadeIn 2s 1s forwards;
     }
   }
 }
